@@ -1,0 +1,211 @@
+
+# 🎯 AI-Powered Resume Screening & Skill Gap Analyzer
+
+An advanced Flask-based web application that uses AI to analyze resumes against job descriptions, providing detailed match scores, skill gap analysis, and actionable recommendations.
+
+## ✨ Features
+
+### 🚀 Core Features
+- **Multiple Resume Upload**: Analyze multiple candidate resumes simultaneously
+- **AI-Powered Analysis**: Uses Groq's LLM for intelligent resume screening
+- **Match Score Calculation**: Automatic percentage-based matching against job requirements
+- **Skill Gap Detection**: Identifies missing skills and qualifications
+- **Visual Analytics**: Interactive charts and graphs using Chart.js
+- **AI Chatbot Assistant**: Interactive chatbot to answer questions about analysis results
+- **Beautiful UI**: Modern, gradient-based design with smooth animations
+
+### 📊 Analytics Dashboard
+- Match score bar chart for all candidates
+- Distribution pie chart showing candidate quality breakdown
+- Real-time statistics (total resumes, qualified candidates, average match)
+- Color-coded scoring system (Excellent/Good/Average/Poor)
+
+### 💬 AI Assistant Features
+- Real-time chat about analysis results
+- Context-aware responses based on all resume analyses
+- Helps make informed hiring decisions
+- Easy-to-use floating chat interface
+
+## 🛠️ Installation
+
+### Prerequisites
+- Python 3.8 or higher
+- Groq API Key ([Get one here](https://console.groq.com))
+
+### Setup Steps
+
+1. **Clone or download the project**
+```bash
+cd your-project-folder
+```
+
+2. **Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+3. **Create a `.env` file in the project root**
+```env
+GROQ_API_KEY=your_groq_api_key_here
+```
+
+4. **Create the templates folder structure**
+```
+your-project/
+├── app.py
+├── requirements.txt
+├── .env
+└── templates/
+    ├── index.html
+    ├── upload_resume.html
+    └── result.html
+```
+
+5. **Run the application**
+```bash
+python app.py
+```
+
+6. **Open your browser**
+Navigate to `http://localhost:3000`
+
+## 📖 Usage Guide
+
+### Step 1: Upload Documents
+1. Click "Start Analyzing Now" on the homepage
+2. Upload your job description PDF
+3. Upload one or more resume PDFs (you can select multiple files)
+4. Click "Analyze Resumes"
+
+### Step 2: View Results
+- See overall statistics (total resumes, qualified candidates, average match)
+- Review detailed analysis for each resume
+- View match score charts and distribution graphs
+- Each resume shows:
+  - Match percentage (0-100%)
+  - Strengths and relevant qualifications
+  - Skill gaps and missing requirements
+  - Specific recommendations for improvement
+  - Overall assessment
+
+### Step 3: Use AI Assistant
+1. Click the chat button (💬) in the bottom-right corner
+2. Ask questions about the analysis results
+3. Get insights and recommendations
+4. Examples:
+   - "Which candidate is most qualified?"
+   - "What skills are missing from Resume 2?"
+   - "Compare the top two candidates"
+   - "What are the main strengths of the best candidate?"
+
+## 🎨 Color Coding
+
+The application uses an intuitive color system:
+
+- **Purple/Blue Gradient**: Primary theme colors
+- **Green (80%+)**: Excellent match
+- **Blue (65-79%)**: Good match
+- **Orange (50-64%)**: Average match
+- **Red (<50%)**: Poor match
+
+## 🔧 Technical Details
+
+### Tech Stack
+- **Backend**: Flask (Python)
+- **AI/ML**: LangChain + Groq (Llama 3.1)
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Charts**: Chart.js
+- **PDF Processing**: pdfplumber
+
+### API Endpoints
+- `GET /` - Homepage
+- `GET /upload` - Upload page
+- `POST /upload_resume` - Process resumes
+- `POST /chat` - Chatbot API
+
+## 📝 File Limits
+
+- **Format**: PDF only
+- **Size**: Maximum 5MB per file
+- **Job Description**: 1 file required
+- **Resumes**: 1 or more files required
+
+## 🎯 Best Practices
+
+1. **Job Descriptions**: Include clear requirements, skills, and qualifications
+2. **Resumes**: Use standard PDF format with clear text (not scanned images)
+3. **Multiple Resumes**: Upload all candidates at once for easy comparison
+4. **Use the Chatbot**: Ask specific questions to get deeper insights
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Issue**: "Module not found" error
+- **Solution**: Run `pip install -r requirements.txt`
+
+**Issue**: API key error
+- **Solution**: Check your `.env` file has the correct `GROQ_API_KEY`
+
+**Issue**: PDF extraction fails
+- **Solution**: Ensure PDFs contain actual text (not just images/scans)
+
+**Issue**: Charts not displaying
+- **Solution**: Check internet connection (Chart.js loads from CDN)
+
+## 🔐 Security Notes
+
+- Never commit your `.env` file to version control
+- Keep your Groq API key private
+- The application doesn't store uploaded files permanently
+- All processing happens server-side
+
+## 📊 Sample Output
+
+The AI provides structured analysis including:
+
+```
+MATCH SCORE: 85%
+
+STRENGTHS:
+- 5+ years of experience in relevant field
+- Strong technical skills matching job requirements
+- Excellent educational background
+
+SKILL GAPS:
+- Missing certification in [specific area]
+- Limited experience with [specific tool]
+
+RECOMMENDATIONS:
+- Add keywords: [list]
+- Highlight [specific experience]
+- Include metrics and achievements
+
+OVERALL ASSESSMENT:
+Strong candidate with excellent qualifications...
+```
+
+## 🚀 Future Enhancements
+
+Potential improvements:
+- Support for DOCX format
+- Email notifications
+- Export results to PDF/Excel
+- Candidate ranking system
+- ATS keyword optimization
+- Integration with job boards
+
+## 📄 License
+
+This project is for educational and professional use.
+
+## 🤝 Support
+
+For issues or questions:
+1. Check the troubleshooting section
+2. Review Groq API documentation
+3. Verify all dependencies are installed
+
+---
+
+**Built with ❤️ for smarter hiring decisions**
